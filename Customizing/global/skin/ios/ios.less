@@ -1,0 +1,75 @@
+//pathes
+@delospath:	"../../../../templates/default/";
+
+//import delos
+@import "@{delospath}delos.less";
+
+@icon-font-path: "../../../../Services/UICore/lib/bootstrap-3.2.0/fonts/";
+@background-images-path: "images/";
+@web-font-path: "../../../../templates/default/fonts/";
+
+@il-fixed-menu-height: 160px;
+@body-bg: #fff;
+@il-secondary-container-bg: #fff;
+
+div.ilTopBar {
+   background: url("images/header_bg.jpg") no-repeat center top;
+}
+
+.ilMainHeader {
+    background: url("images/header_bg.jpg") no-repeat center -40px;
+    border-bottom: none;
+	height: 120px;
+	> header > .row > a.navbar-brand {
+		height: auto;
+		margin: 0 0 0 15px;
+		> img {
+			height: 80px;
+			width: 80px;
+			@media only screen and (max-width: @screen-sm-min) {
+				height: 40px;
+				width: 40px;
+			}
+		}
+	}
+}
+
+.ilMainMenu {
+    background-color: transparent;
+	&.ilTopFixed {
+		top: 120px;
+	}
+}
+
+#ilTopNav {
+	margin: 0;
+	.navbar-nav {
+		float: right;
+		margin-right: 15px;
+	}
+}
+
+ol.breadcrumb {
+    margin: 0 15px;
+	@media only screen and (max-width: @screen-sm-min) {
+		margin: 0;
+	}
+}
+
+#ilTopBarNav > li > a {
+    background: url("images/bluebg.png");
+	&:hover, &:active, &:focus {
+		background: url("images/blue60.png");
+	}
+}
+
+.ilTopTitle {
+	color: #fff;
+    font-size: 28px;
+	line-height: 28px;
+	letter-spacing: 0.1em;
+	word-spacing: -0.1em;
+	padding-left: 250px;
+	position: absolute;
+    top: 60px;
+}

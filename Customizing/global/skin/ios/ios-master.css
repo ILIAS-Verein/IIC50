@@ -11483,11 +11483,3 @@ div.ilNewObjectSelector {
 .ilMainMenu.ilTopFixed {
   top: 70px;
 }
-ol.breadcrumb {
-  background-color: #78b44d;
-  color: white;
-}
-ol.breadcrumb > li + li:before,
-ol.breadcrumb a {
-  color: white;
-}

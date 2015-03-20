@@ -1,3 +1,16 @@
+//IOS COLORS
+//use #E25607 orange
+@ios-use-color: color('#e25607');
+//com #00527C
+@ios-com-color: color('#00527c');
+//dev #78b44d
+@ios-dev-color: color('#78b44d');
+
+//blue bde0ff hover light-blue #e4f1ff
+@ios-std-color: color('#bde0ff');
+@ios-stdh-color: color('#e4f1ff');
+
+
 //pathes
 @delospath:	"../../../../templates/default/";
 
@@ -11,6 +24,19 @@
 @il-fixed-menu-height: 160px;
 @body-bg: #fff;
 @il-secondary-container-bg: #fff;
+
+@ilMainMenuColor: #003388;
+@ilMainMenuHoverColor: #222222;
+@ilMainMenuBg: @ios-std-color;
+@ilMainMenuHoverBg: @ios-stdh-color;
+
+@text-color:            #222222;
+@link-color:            #0033aa;
+@link-hover-color:      #222222;
+
+.ilContainerWidth {
+    max-width: 1024px;
+}
 
 div.ilTopBar {
    background: url("images/header_bg.jpg") no-repeat center top;
@@ -26,7 +52,7 @@ div.ilTopBar {
 		> img {
 			height: 80px;
 			width: 80px;
-			@media only screen and (max-width: @screen-sm-min) {
+			@media only screen and (max-width: @grid-float-breakpoint-max) {
 				height: 40px;
 				width: 40px;
 			}
@@ -37,21 +63,15 @@ div.ilTopBar {
 .ilMainMenu {
     background-color: transparent;
 	&.ilTopFixed {
-		top: 120px;
-	}
-}
-
-#ilTopNav {
-	margin: 0;
-	.navbar-nav {
-		float: right;
-		margin-right: 15px;
+		top: 130px;
 	}
 }
 
 ol.breadcrumb {
     margin: 0 15px;
-	@media only screen and (max-width: @screen-sm-min) {
+	background-color: @ios-stdh-color;
+	//color: white;
+	@media only screen and (max-width: @grid-float-breakpoint-max) {
 		margin: 0;
 	}
 }
@@ -64,12 +84,244 @@ ol.breadcrumb {
 }
 
 .ilTopTitle {
-	color: #fff;
+	color: #eef2f7;
     font-size: 28px;
 	line-height: 28px;
 	letter-spacing: 0.1em;
 	word-spacing: -0.1em;
-	padding-left: 250px;
+	left: 150px;
 	position: absolute;
     top: 60px;
+}
+
+a.ilTreeView[href*="ilias.php?baseClass=ilRepositoryGUI&cmd=frameset&set_mode=tree"] {
+	display: none;
+}
+
+#ilTopNav {
+	margin: 0;//
+	&.navbar {
+		padding: 0;
+		min-height: 30px;
+		@media only screen and (max-width: @grid-float-breakpoint-max) {
+			padding: 0;
+			min-height: 0;
+		}
+		> .navbar-collapse {
+			margin: 0 15px;
+			padding: 0;
+			border: 0;
+			@media only screen and (max-width: @grid-float-breakpoint-max) {
+				margin: 0;
+			}
+			&.in {
+				overflow-y: visible;
+			}
+		}
+	}
+	&.navbar-default {
+		background-color: transparent;
+		border: 0;
+		@media only screen and (max-width: @grid-float-breakpoint-max) {
+			background-color: white;
+		}
+	}
+	.dropdown-menu {
+		float: left;
+		right: auto;
+		left: 0;
+		min-width: 100%;
+		@media only screen and (max-width: @grid-float-breakpoint-max) {
+			float: none;
+			left: auto;
+			right: auto;
+		}
+		li > a {
+			&:hover,
+			&:active,
+			&:focus {
+				//color: ;
+			}
+		}
+	}
+	.navbar-text {
+		color: @ilMainMenuColor;
+	}
+	button.navbar-toggle {
+		@media only screen and (max-width: @grid-float-breakpoint-max) {
+			position: absolute;
+			top: -40px;
+			left: 40px;
+			background: url("images/bluebg.png") repeat transparent;
+		}
+		&:hover, &:active, &:focus {
+			@media only screen and (max-width: @grid-float-breakpoint-max) {
+				background: url("images/blue60.png");
+			}
+		}
+	}
+	.navbar-nav {
+		float: right;
+		margin: 0;
+		@media only screen and (max-width: @grid-float-breakpoint-max) {
+			float: left;
+			width: 100%;
+		}
+		> li {
+			margin: 0;//
+			@media only screen and (max-width: @grid-float-breakpoint-max) {
+				padding: 0;
+				margin: 0 0 5px;
+			}
+			> a {
+				margin: 0;
+				padding: 5px 10px;//5px 10px 6px;
+				border-top: none;
+				background-color: @ilMainMenuBg;
+				color: @ilMainMenuColor;
+				text-transform: none;
+				@media only screen and (max-width: @grid-float-breakpoint-max) {
+					padding: 6px 10px 8px 40px;
+					//background-color: ;
+				}
+				> .caret {
+					color: @ilMainMenuColor;
+					margin-left: 4px;
+				}
+				&:hover,
+				&:active,
+				&:focus {
+					outline: 0;
+					border-top: none;
+					background-color: @ilMainMenuHoverBg;
+					color: @ilMainMenuHoverColor;
+					@media only screen and (max-width: @grid-float-breakpoint-max) {
+						border-top: none;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		> .active > a,
+		> .open > a {
+			&,
+			&:hover,
+			&:active,
+			&:focus {
+				outline: 0;
+				border-top: none;
+				background-color: @ilMainMenuHoverBg;
+				color: @ilMainMenuHoverColor;
+				@media only screen and (max-width: @grid-float-breakpoint-max) {
+					
+				}
+			}
+		}
+		//angepasste Farbe für das MainMenu Plug-In
+		//ID's entsprechend anpassen'
+		//orange USE
+		> li#cust_mmli_3 {
+			& > a,
+			&.active > a,
+			&.open > a {
+				&,
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: @ios-use-color;
+					color: white;
+					> .caret {
+						color: white;
+					}
+				}
+			}
+		}
+		//grün DEV
+		> li#cust_mmli_6 {
+			& > a,
+			&.active > a,
+			&.open > a {
+				&,
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: @ios-dev-color;
+					color: white;
+					> .caret {
+						color: white;
+					}
+				}
+			}
+		}
+		//blau COM
+		> li#cust_mmli_7 {
+			& > a,
+			&.active > a,
+			&.open > a {
+				&,
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: @ios-com-color;
+					color: white;
+					> .caret {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}
+
+div.il_Block, table.il_Block {
+    margin: 0 0 20px;
+    padding: 5px 0;
+}
+
+div.ilBlockHeader, div.ilBlockHeaderBig, td.ilBlockHeader, td.ilBlockHeaderBig {
+    margin: 0;
+    padding: 3px 0;
+}
+.ilBlockRow1, .ilBlockRow2 {
+    padding: 3px 0;
+}
+
+div.ilBlockContent {
+    padding: 5px 0;
+}
+
+h3.ilPDBlockSubHeader {
+    padding: 1px 0 0;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid #f0f0f0;
+}
+
+div.ilContainerListItemOuter {
+    padding: 15px 0;
+}
+
+#ilSubTab {
+	background-color: #f8f8f8;
+    margin: -23px 15px 10px;
+    padding: 5px 0;
+	> li > a {
+		padding: 3px 12px;
+	}
+}
+
+.ilTopFixed {
+	@media only screen and (max-width: @grid-float-breakpoint-max) {
+		position: static !important;
+	}
+}
+
+.ilFixedTopSpacer, .ilFixedTopSpacerBarOnly {
+	@media only screen and (max-width: @grid-float-breakpoint-max) {
+		margin-top: 0;
+	}
+}
+
+div.ilNewObjectSelector {
+    padding-right: 0;
 }

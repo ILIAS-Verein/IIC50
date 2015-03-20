@@ -11153,6 +11153,7 @@ div.ilTopBar {
   .ilMainHeader > header > .row > a.navbar-brand > img {
     height: 40px;
     width: 40px;
+    position: absolute;
   }
 }
 .ilMainMenu {

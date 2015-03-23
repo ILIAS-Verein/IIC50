@@ -224,10 +224,10 @@ a.ilTreeView[href*="ilias.php?baseClass=ilRepositoryGUI&cmd=frameset&set_mode=tr
 		//angepasste Farbe für das MainMenu Plug-In
 		//ID's entsprechend anpassen
 		//orange USE
-		> li {
-			& > a#cust_tr_3,
-			&.active > a#cust_tr_3,
-			&.open > a#cust_tr_3 {
+		> li,
+		> li.active,
+		> li.open {
+			& > a#cust_tr_3 {
 				&,
 				&:hover,
 				&:active,
@@ -241,10 +241,10 @@ a.ilTreeView[href*="ilias.php?baseClass=ilRepositoryGUI&cmd=frameset&set_mode=tr
 			}
 		}
 		//grün DEV
-		> li {
-			& > a#cust_tr_2,
-			&.active > a#cust_tr_2,
-			&.open > a#cust_tr_2 {
+		> li,
+		> li.active,
+		> li.open {
+			& > a#cust_tr_6 {
 				&,
 				&:hover,
 				&:active,
@@ -258,10 +258,10 @@ a.ilTreeView[href*="ilias.php?baseClass=ilRepositoryGUI&cmd=frameset&set_mode=tr
 			}
 		}
 		//blau COM
-		> li {
-			& > a#cust_tr_1,
-			&.active > a#cust_tr_1,
-			&.open > a#cust_tr_1 {
+		> li,
+		> li.active,
+		> li.open {
+			& > a#cust_tr_7 {
 				&,
 				&:hover,
 				&:active,

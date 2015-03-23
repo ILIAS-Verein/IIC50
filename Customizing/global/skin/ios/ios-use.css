@@ -11352,62 +11352,62 @@ a.ilTreeView[href*="ilias.php?baseClass=ilRepositoryGUI&cmd=frameset&set_mode=tr
 #ilTopNav .navbar-nav > li.open > a#cust_tr_3:focus > .caret {
   color: white;
 }
-#ilTopNav .navbar-nav > li > a#cust_tr_2,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_2,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_2,
-#ilTopNav .navbar-nav > li > a#cust_tr_2:hover,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_2:hover,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_2:hover,
-#ilTopNav .navbar-nav > li > a#cust_tr_2:active,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_2:active,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_2:active,
-#ilTopNav .navbar-nav > li > a#cust_tr_2:focus,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_2:focus,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_2:focus {
+#ilTopNav .navbar-nav > li > a#cust_tr_6,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_6,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_6,
+#ilTopNav .navbar-nav > li > a#cust_tr_6:hover,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_6:hover,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_6:hover,
+#ilTopNav .navbar-nav > li > a#cust_tr_6:active,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_6:active,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_6:active,
+#ilTopNav .navbar-nav > li > a#cust_tr_6:focus,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_6:focus,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_6:focus {
   background-color: #78b44d;
   color: white;
 }
-#ilTopNav .navbar-nav > li > a#cust_tr_2 > .caret,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_2 > .caret,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_2 > .caret,
-#ilTopNav .navbar-nav > li > a#cust_tr_2:hover > .caret,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_2:hover > .caret,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_2:hover > .caret,
-#ilTopNav .navbar-nav > li > a#cust_tr_2:active > .caret,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_2:active > .caret,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_2:active > .caret,
-#ilTopNav .navbar-nav > li > a#cust_tr_2:focus > .caret,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_2:focus > .caret,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_2:focus > .caret {
+#ilTopNav .navbar-nav > li > a#cust_tr_6 > .caret,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_6 > .caret,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_6 > .caret,
+#ilTopNav .navbar-nav > li > a#cust_tr_6:hover > .caret,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_6:hover > .caret,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_6:hover > .caret,
+#ilTopNav .navbar-nav > li > a#cust_tr_6:active > .caret,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_6:active > .caret,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_6:active > .caret,
+#ilTopNav .navbar-nav > li > a#cust_tr_6:focus > .caret,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_6:focus > .caret,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_6:focus > .caret {
   color: white;
 }
-#ilTopNav .navbar-nav > li > a#cust_tr_1,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_1,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_1,
-#ilTopNav .navbar-nav > li > a#cust_tr_1:hover,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_1:hover,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_1:hover,
-#ilTopNav .navbar-nav > li > a#cust_tr_1:active,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_1:active,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_1:active,
-#ilTopNav .navbar-nav > li > a#cust_tr_1:focus,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_1:focus,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_1:focus {
+#ilTopNav .navbar-nav > li > a#cust_tr_7,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_7,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_7,
+#ilTopNav .navbar-nav > li > a#cust_tr_7:hover,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_7:hover,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_7:hover,
+#ilTopNav .navbar-nav > li > a#cust_tr_7:active,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_7:active,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_7:active,
+#ilTopNav .navbar-nav > li > a#cust_tr_7:focus,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_7:focus,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_7:focus {
   background-color: #00527c;
   color: white;
 }
-#ilTopNav .navbar-nav > li > a#cust_tr_1 > .caret,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_1 > .caret,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_1 > .caret,
-#ilTopNav .navbar-nav > li > a#cust_tr_1:hover > .caret,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_1:hover > .caret,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_1:hover > .caret,
-#ilTopNav .navbar-nav > li > a#cust_tr_1:active > .caret,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_1:active > .caret,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_1:active > .caret,
-#ilTopNav .navbar-nav > li > a#cust_tr_1:focus > .caret,
-#ilTopNav .navbar-nav > li.active > a#cust_tr_1:focus > .caret,
-#ilTopNav .navbar-nav > li.open > a#cust_tr_1:focus > .caret {
+#ilTopNav .navbar-nav > li > a#cust_tr_7 > .caret,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_7 > .caret,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_7 > .caret,
+#ilTopNav .navbar-nav > li > a#cust_tr_7:hover > .caret,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_7:hover > .caret,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_7:hover > .caret,
+#ilTopNav .navbar-nav > li > a#cust_tr_7:active > .caret,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_7:active > .caret,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_7:active > .caret,
+#ilTopNav .navbar-nav > li > a#cust_tr_7:focus > .caret,
+#ilTopNav .navbar-nav > li.active > a#cust_tr_7:focus > .caret,
+#ilTopNav .navbar-nav > li.open > a#cust_tr_7:focus > .caret {
   color: white;
 }
 div.il_Block,

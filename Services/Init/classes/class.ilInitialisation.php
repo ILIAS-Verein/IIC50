@@ -913,6 +913,10 @@ class ilInitialisation
 	{
 		if (self::$already_initialized) 
 		{
+			if(ilContext::hasHTML())
+			{
+				self::initHTML(true);
+			}
 			return;
 		}
 
@@ -1255,10 +1259,22 @@ class ilInitialisation
 	/**
 	 * init HTML output (level 3)
 	 */
-	protected static function initHTML()
+	protected static function initHTML($a_update_init = false)
 	{
 		global $ilUser;
-		
+
+		// this fancy part is only called if init is called twice,
+		// e.g. in the goto procedure, this fixes local styles
+		// that rely on an updated $_GET["ref_id"] parameter to work
+		// yes, a request object with a permission context would make everything easier ...
+		if ($a_update_init)
+		{
+			global $tpl;
+			$location_stylesheet = ilUtil::getStyleSheetLocation();
+			$tpl->setVariable("LOCATION_STYLESHEET",$location_stylesheet);
+			return;
+		}
+
 		if(ilContext::hasUser())
 		{
 			// load style definitions

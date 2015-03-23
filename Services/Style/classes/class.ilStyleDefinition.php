@@ -358,7 +358,7 @@ class ilStyleDefinition extends ilSaxParser
 	public static function getCurrentStyle()
 	{
 		global $ilias, $tree, $styleDefinition, $tree;	
-		
+
 		if (isset(self::$current_style))
 		{
 			return self::$current_style;

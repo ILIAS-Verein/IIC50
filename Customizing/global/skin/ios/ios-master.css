@@ -11131,7 +11131,7 @@ table.mceToolbar td {
   }
 }
 .ilContainerWidth {
-  max-width: 1024px;
+  max-width: 1200px;
 }
 div.ilTopBar {
   background: url("images/header_bg.jpg") no-repeat center top;
@@ -11485,6 +11485,38 @@ div#il_startup_logo .ilTopTitle {
   position: static;
   top: auto;
   padding: 20px 0 0 70px;
+}
+/* Simple Slide formats - Testimonials */
+div.simpleSlide-slide {
+  background: #f0f1f4 url("testimonials/bg-quotation_testimonials.png") no-repeat bottom right;
+  width: 450px;
+  height: 200px;
+  margin-bottom: 15px;
+}
+div.simpleSlide-slide img {
+  float: left;
+  margin: 8px;
+}
+div.simpleSlide-slide div {
+  padding: 0 10px 0 120px;
+  margin: 5px;
+  font-size: 100%;
+  line-height: 130%;
+  color: #00527c;
+}
+div.simpleSlide-slide div span {
+  display: block;
+  font-size: 100%;
+  margin-top: 10px;
+  color: #808080;
+}
+div.ilc_section_Block {
+  float: right;
+  max-width: 60%;
+  width: 75%;
+}
+table.ilc_table_StandardTable {
+  table-layout: fixed;
 }
 .ilMainHeader {
   background: url("images/header_bg.jpg") no-repeat center -40px;

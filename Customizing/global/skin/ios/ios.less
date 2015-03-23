@@ -34,6 +34,9 @@
 @link-color:            #0033aa;
 @link-hover-color:      #222222;
 
+@ios-footer-color: white;
+@ios-footer-background: @brand-primary;
+
 .ilContainerWidth {
     max-width: 1024px;
 }
@@ -325,4 +328,34 @@ div.ilContainerListItemOuter {
 
 div.ilNewObjectSelector {
     padding-right: 0;
+}
+
+footer.ilFooter {
+	background-color: @ios-footer-background;
+	color: @ios-footer-color;
+	div.ilFooterContainer {
+		color: @ios-footer-color;
+	}
+	a.permalink_label,
+	div.ilFooterContainer > a {
+		&, &:hover {
+			color: @ios-footer-color;
+		}
+	}
+}
+
+div#il_startup_logo {
+	img {
+		display: inline-block;
+		float: left;
+		height: 80px;
+		width: 80px;
+		margin: 0 0 0 15px;
+	}
+	.ilTopTitle {
+		left: auto;
+		position: static;
+		top: auto;
+		padding: 20px 0 0 70px;
+	}
 }

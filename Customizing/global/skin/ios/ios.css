@@ -11460,3 +11460,29 @@ div.ilContainerListItemOuter {
 div.ilNewObjectSelector {
   padding-right: 0;
 }
+footer.ilFooter {
+  background-color: #4c6586;
+  color: #ffffff;
+}
+footer.ilFooter div.ilFooterContainer {
+  color: #ffffff;
+}
+footer.ilFooter a.permalink_label,
+footer.ilFooter div.ilFooterContainer > a,
+footer.ilFooter a.permalink_label:hover,
+footer.ilFooter div.ilFooterContainer > a:hover {
+  color: #ffffff;
+}
+div#il_startup_logo img {
+  display: inline-block;
+  float: left;
+  height: 80px;
+  width: 80px;
+  margin: 0 0 0 15px;
+}
+div#il_startup_logo .ilTopTitle {
+  left: auto;
+  position: static;
+  top: auto;
+  padding: 20px 0 0 70px;
+}

@@ -11180,7 +11180,8 @@ ol.breadcrumb {
   background: url("images/blue60.png");
 }
 .ilTopTitle {
-  color: #eef2f7;
+  color: white;
+  font-family: "Open Sans Light";
   font-size: 28px;
   line-height: 28px;
   letter-spacing: 0.1em;
@@ -11188,6 +11189,15 @@ ol.breadcrumb {
   left: 150px;
   position: absolute;
   top: 60px;
+}
+.ilTopTitleVisible {
+  display: inline-block;
+  padding-top: 8px;
+}
+@media only screen and (max-width: 767px) {
+  .ilTopTitleVisible {
+    display: inline-block;
+  }
 }
 a.ilTreeView[href*="ilias.php?baseClass=ilRepositoryGUI&cmd=frameset&set_mode=tree"] {
   display: none;
@@ -11283,7 +11293,7 @@ a.ilTreeView[href*="ilias.php?baseClass=ilRepositoryGUI&cmd=frameset&set_mode=tr
   border-top: none;
   background-color: #bde0ff;
   color: #003388;
-  text-transform: none;
+  font-size: 12px;
 }
 @media only screen and (max-width: 767px) {
   #ilTopNav .navbar-nav > li > a {
@@ -11510,11 +11520,59 @@ div.simpleSlide-slide div span {
   margin-top: 10px;
   color: #808080;
 }
-div.ilc_section_Block {
-  float: right;
-  max-width: 60%;
-  width: 75%;
-}
 table.ilc_table_StandardTable {
   table-layout: fixed;
+}
+table.ilc_table_StandardTable div.ilc_section_Block {
+  float: right;
+  max-width: 60%;
+  width: 100%;
+}
+@media only screen and (max-width: 767px) {
+  table.ilc_table_StandardTable div.ilc_section_Block {
+    max-width: 100%;
+  }
+}
+.ilLeftNav {
+  background-color: #ffffff;
+  border-left: 3px solid #979797;
+  border-right: none;
+  margin-left: 0;
+  padding: 10px 18px 5px 0;
+  width: 320px;
+}
+.jstree ins {
+  vertical-align: top !important;
+}
+.jstree a {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  max-width: 100%;
+  height: auto !important;
+}
+.jstree a span.ilExp2NodeContent {
+  line-height: 20px;
+  vertical-align: middle;
+}
+.jstree a:link,
+.jstree a:visited {
+  color: #004a6e !important;
+  text-decoration: normal;
+}
+.jstree a:link span.ilExp2NodeContent,
+.jstree a:visited span.ilExp2NodeContent {
+  border-bottom: 1px solid transparent;
+}
+.jstree a:hover,
+.jstree a:focus,
+.jstree a:active,
+.jstree a:visited:hover {
+  color: black !important;
+  text-decoration: normal !important;
+}
+.jstree a:hover span.ilExp2NodeContent,
+.jstree a:focus span.ilExp2NodeContent,
+.jstree a:active span.ilExp2NodeContent,
+.jstree a:visited:hover span.ilExp2NodeContent {
+  border-bottom: 1px solid black;
 }

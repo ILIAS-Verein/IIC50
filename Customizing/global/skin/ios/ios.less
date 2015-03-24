@@ -88,7 +88,8 @@ ol.breadcrumb {
 }
 
 .ilTopTitle {
-	color: #eef2f7;
+	color: white;
+	font-family: "Open Sans Light";
     font-size: 28px;
 	line-height: 28px;
 	letter-spacing: 0.1em;
@@ -96,6 +97,14 @@ ol.breadcrumb {
 	left: 150px;
 	position: absolute;
     top: 60px;
+}
+
+.ilTopTitleVisible {
+	display: inline-block;
+    padding-top: 8px;
+	@media only screen and (max-width: @grid-float-breakpoint-max) {
+		display: inline-block;
+	}
 }
 
 a.ilTreeView[href*="ilias.php?baseClass=ilRepositoryGUI&cmd=frameset&set_mode=tree"] {
@@ -183,7 +192,7 @@ a.ilTreeView[href*="ilias.php?baseClass=ilRepositoryGUI&cmd=frameset&set_mode=tr
 				border-top: none;
 				background-color: @ilMainMenuBg;
 				color: @ilMainMenuColor;
-				text-transform: none;
+				font-size: 12px;
 				@media only screen and (max-width: @grid-float-breakpoint-max) {
 					padding: 6px 10px 8px 40px;
 					//background-color: ;
@@ -389,13 +398,57 @@ div.simpleSlide-slide div span {
 	color: #808080;
 }
 
-
-div.ilc_section_Block {
-    float: right;
-    max-width: 60%;
-    width: 75%;
-}
-
 table.ilc_table_StandardTable {
     table-layout: fixed;
+	div.ilc_section_Block {
+		float: right;
+		max-width: 60%;
+		width: 100%;
+		@media only screen and (max-width: @grid-float-breakpoint-max) {
+			max-width: 100%;
+		}
+	}
+}
+
+.ilLeftNav {
+    background-color: #ffffff;
+    border-left: 3px solid #979797;
+	border-right: none;
+    margin-left: 0;
+    padding: 10px 18px 5px 0;
+	width: 320px;
+}
+
+.jstree {
+	ins {
+		vertical-align: top !important;
+	}
+	a {
+		white-space: normal !important;
+		word-wrap: break-word !important;
+		max-width: 100%;
+		height: auto !important;
+		span.ilExp2NodeContent {
+			line-height: 20px;
+			vertical-align: middle;
+		}
+		&:link,
+		&:visited { 
+			color: #004a6e !important; 
+			text-decoration: normal;
+			span.ilExp2NodeContent {
+				border-bottom: 1px solid transparent;
+			}
+		}
+		&:hover, 
+		&:focus,
+		&:active,
+		&:visited:hover {
+			color: black !important;
+			text-decoration: normal !important;
+			span.ilExp2NodeContent {
+				border-bottom: 1px solid black;
+			}
+		}
+	}
 }

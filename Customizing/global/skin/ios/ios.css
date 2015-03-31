@@ -6396,6 +6396,10 @@ span.ilAlert {
   height: 22px;
   margin: 0 3px 0 0;
 }
+#ilAdvSelListTable_socialbm_actions.dropdown-menu img {
+  width: auto;
+  height: auto;
+}
 .ilAdvNoImg {
   display: inline-block;
   width: 22px;
@@ -11171,6 +11175,11 @@ ol.breadcrumb {
     margin: 0;
   }
 }
+@media only screen and (max-width: 479px) {
+  #ilTopBarNav > li.ilSoNet {
+    display: none;
+  }
+}
 #ilTopBarNav > li > a {
   background: url("images/bluebg.png");
 }
@@ -11449,7 +11458,7 @@ div.ilContainerListItemOuter {
   padding: 15px 0;
 }
 #ilSubTab {
-  background-color: #f8f8f8;
+  background-color: #f0f0f0;
   margin: -23px 15px 10px;
   padding: 5px 0;
 }
@@ -11575,4 +11584,7 @@ table.ilc_table_StandardTable div.ilc_section_Block {
 .jstree a:active span.ilExp2NodeContent,
 .jstree a:visited:hover span.ilExp2NodeContent {
   border-bottom: 1px solid black;
+}
+div.ilBlogList {
+  padding: 10px 0;
 }

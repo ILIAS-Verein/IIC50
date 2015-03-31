@@ -80,10 +80,17 @@ ol.breadcrumb {
 	}
 }
 
-#ilTopBarNav > li > a {
-    background: url("images/bluebg.png");
-	&:hover, &:active, &:focus {
-		background: url("images/blue60.png");
+#ilTopBarNav > li {
+	&.ilSoNet {
+		@media only screen and (max-width: (@screen-xs-min - 1)) {
+			display: none;
+		}
+	}
+	> a {
+		background: url("images/bluebg.png");
+		&:hover, &:active, &:focus {
+			background: url("images/blue60.png");
+		}
 	}
 }
 
@@ -315,7 +322,7 @@ div.ilContainerListItemOuter {
 }
 
 #ilSubTab {
-	background-color: #f8f8f8;
+	background-color: #f0f0f0;
     margin: -23px 15px 10px;
     padding: 5px 0;
 	> li > a {
@@ -451,4 +458,8 @@ table.ilc_table_StandardTable {
 			}
 		}
 	}
+}
+
+div.ilBlogList {
+    padding: 10px 0;
 }

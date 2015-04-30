@@ -34,7 +34,7 @@ class ilPCParagraph extends ilPageContent
 	function setNode(&$a_node)
 	{
 		parent::setNode($a_node);		// this is the PageContent node
-		
+
 		$childs = $a_node->child_nodes();
 		for ($i=0; $i<count($childs); $i++)
 		{
@@ -96,7 +96,7 @@ class ilPCParagraph extends ilPageContent
 		$this->par_node = $this->node->append_child($this->par_node);
 		$this->par_node->set_attribute("Language", "");
 	}
-	
+
 	/**
 	* Create paragraph node (incl. page content node)
 	* at given hierarchical ID.
@@ -109,10 +109,10 @@ class ilPCParagraph extends ilPageContent
 //echo "-$a_pc_id-";
 //echo "<br>-".htmlentities($a_pg_obj->getXMLFromDom())."-<br><br>"; mk();
 		$this->node =& $this->dom->create_element("PageContent");
-		
+
 		// this next line kicks out placeholders, if something is inserted
 		$a_pg_obj->insertContent($this, $a_hier_id, IL_INSERT_AFTER, $a_pc_id);
-		
+
 		$this->par_node =& $this->dom->create_element("Paragraph");
 		$this->par_node =& $this->node->append_child($this->par_node);
 		$this->par_node->set_attribute("Language", "");
@@ -136,7 +136,7 @@ class ilPCParagraph extends ilPageContent
 		{
 			$text = $a_text;
 		}
-		
+
 		if ($a_auto_split)
 		{
 			$text = $this->autoSplit($a_text);
@@ -146,7 +146,7 @@ class ilPCParagraph extends ilPageContent
 		$check = "";
 		foreach ($text as $t)
 		{
-			$check.= "<Paragraph>".$t["text"]."</Paragraph>"; 
+			$check.= "<Paragraph>".$t["text"]."</Paragraph>";
 		}
 		/*$temp_dom = domxml_open_mem('<?xml version="1.0" encoding="UTF-8"?><Paragraph>'.$text[0]["text"].'</Paragraph>',
 			DOMXML_LOAD_PARSING, $error);*/
@@ -159,7 +159,7 @@ class ilPCParagraph extends ilPageContent
 		{
 			$temp_dom = domxml_open_mem('<?xml version="1.0" encoding="UTF-8"?><Paragraph>'.$text[0]["text"].'</Paragraph>',
 				DOMXML_LOAD_PARSING, $error);
-			
+
 			// delete children of paragraph node
 			$children = $this->par_node->child_nodes();
 			for($i=0; $i<count($children); $i++)
@@ -175,7 +175,7 @@ class ilPCParagraph extends ilPageContent
 			{
 				$new_par_node =& $res->nodeset[0];
 				$new_childs = $new_par_node->child_nodes();
-				
+
 				for($i=0; $i<count($new_childs); $i++)
 				{
 					$cloned_child =& $new_childs[$i]->clone_node(true);
@@ -194,9 +194,9 @@ class ilPCParagraph extends ilPageContent
 					$this->par_node->set_attribute("Characteristic", 'Headline'.$text[0]["level"]);
 				}
 			}
-			
+
 			$ok = true;
-			
+
 			$c_node = $this->node;
 			// add other chunks afterwards
 			for ($i=1; $i<count($text); $i++)
@@ -218,7 +218,7 @@ class ilPCParagraph extends ilPageContent
 					$c_node = $next_par->node;
 				}
 			}
-			
+
 			return true;
 		}
 		else
@@ -270,7 +270,7 @@ class ilPCParagraph extends ilPageContent
 			return "";
 		}
 	}
-	
+
 	/**
 	 * Get paragraph sequenc of current paragraph
 	 */
@@ -289,14 +289,14 @@ class ilPCParagraph extends ilPageContent
 				$pchilds[0]->get_attribute("Characteristic") != "Code")
 			{
 				$cur_seq[] = $childs[$i];
-				
+
 				// check whether this is the sequence of the current paragraph
 				if ($childs[$i]->get_attribute("PCID") == $pc_id &&
 					$childs[$i]->get_attribute("HierId") == $hier_id)
 				{
 					$found = true;
 				}
-				
+
 				// if this is the current sequenc, get it
 				if ($found)
 				{
@@ -310,7 +310,7 @@ class ilPCParagraph extends ilPageContent
 				$found = false;
 			}
 		}
-		
+
 		$content = "";
 		$ids = "###";
 		$id_sep = "";
@@ -331,7 +331,7 @@ class ilPCParagraph extends ilPageContent
 			$id_sep = ";";
 		}
 		$ids.= "###";
-		
+
 		return $ids.$content;
 	}
 
@@ -396,7 +396,7 @@ class ilPCParagraph extends ilPageContent
 	{
 		return $this->par_node->get_attribute("AutoIndent");
 	}
-	
+
 	function setAutoIndent($a_char)
 	{
 		if (!empty($a_char))
@@ -446,27 +446,27 @@ class ilPCParagraph extends ilPageContent
 	{
 		return $this->par_node->get_attribute("DownloadTitle");
 	}
-	
+
 	/**
 	* set attribute showlinenumbers
 	*/
-	
+
 	function setShowLineNumbers($a_char)
 	{
 		$a_char = empty($a_char)?"n":$a_char;
-		
+
 		$this->par_node->set_attribute("ShowLineNumbers", $a_char);
 	}
 
 	/**
 	* get attribute showlinenumbers
-	* 
+	*
 	*/
 	function getShowLineNumbers()
 	{
 		return $this->par_node->get_attribute("ShowLineNumbers");
 	}
-	
+
 	/**
 	* set language
 	*/
@@ -487,7 +487,7 @@ class ilPCParagraph extends ilPageContent
 	{
 		return $this->_input2xml($a_text, $this->getLanguage(), $a_wysiwyg, $a_handle_lists);
 	}
-	
+
 	/**
 	* converts user input to xml
 	*/
@@ -497,7 +497,7 @@ class ilPCParagraph extends ilPageContent
 		{
 			$a_text = ilUtil::stripSlashes($a_text, false);
 		}
-		
+
 		if ($a_wysiwyg)
 		{
 			$a_text = str_replace("<br />", chr(10), $a_text);
@@ -538,14 +538,14 @@ echo htmlentities($a_text);*/
 		{
 			$a_text = ilPCParagraph::input2xmlReplaceLists($a_text);
 		}
-		
+
 		// remove empty tags
 		$atags = array("com", "emp", "str", "fn", "quot", "code", "acc", "imp", "kw");
 		foreach ($atags as $at)
 		{
 			$a_text = str_replace("[".$at."][/".$at."]", "", $a_text);
 		}
-		
+
 		// bb code to xml
 		$a_text = eregi_replace("\[com\]","<Comment Language=\"".$a_lang."\">",$a_text);
 		$a_text = eregi_replace("\[\/com\]","</Comment>",$a_text);
@@ -565,7 +565,7 @@ echo htmlentities($a_text);*/
 		$a_text = eregi_replace("\[\/imp\]","</Important>",$a_text);
 		$a_text = eregi_replace("\[kw\]","<Keyw>",$a_text);
 		$a_text = eregi_replace("\[\/kw\]","</Keyw>",$a_text);
-		
+
 		$a_text = self::intLinks2xml($a_text);
 
 		// external link
@@ -598,7 +598,7 @@ echo htmlentities($a_text);*/
 				$a_text = str_replace("[".$found[1]."]", "[error: xln".$found[1]."]",$a_text);
 			}
 		}
-		
+
 		// ie/tinymce fix for links without "", see bug #8391
 		while (eregi("\[(xln$ws(url$ws=$ws(([^]])*)))$ws\]", $a_text, $found))
 		{
@@ -612,7 +612,7 @@ echo htmlentities($a_text);*/
 			}
 		}
 		$a_text = eregi_replace("\[\/xln\]","</ExtLink>",$a_text);
-		
+
 		// anchor
 		$ws= "[ \t\r\f\v\n]*";
 		while (eregi("\[(anc$ws(name$ws=$ws\"([^\"])*\")$ws)\]", $a_text, $found))
@@ -624,7 +624,7 @@ echo htmlentities($a_text);*/
 //echo htmlentities($a_text); exit;
 		return $a_text;
 	}
-	
+
 	/**
 	 * internal links to xml
 	 *
@@ -648,7 +648,7 @@ echo htmlentities($a_text);*/
 		{
 			$a_text = str_replace($found[0], "",$a_text);
 		}
-		
+
 		while (eregi("\[(iln$ws((inst$ws=$ws([\"0-9])*)?$ws".
 			"((".$ltypes.")$ws=$ws([\"0-9])*)$ws".
 			"(target$ws=$ws(\"(New|FAQ|Media)\"))?$ws(anchor$ws=$ws(\"([^\"])*\"))?$ws))\]", $a_text, $found))
@@ -772,7 +772,7 @@ echo htmlentities($a_text);*/
 				{
 					$a_text = eregi_replace("\[".$found[1]."\]", "[error: iln".$found[1]."]",$a_text);
 				}
-			}			
+			}
 		}
 		while (eregi("\[(iln$ws((inst$ws=$ws([\"0-9])*)?".$ws."media$ws=$ws([\"0-9])*)$ws)/\]", $a_text, $found))
 		{
@@ -781,11 +781,23 @@ echo htmlentities($a_text);*/
 			$a_text = eregi_replace("\[".$found[1]."/\]",
 				"<IntLink Target=\"il_".$inst_str."_mob_".$attribs[media]."\" Type=\"MediaObject\"/>", $a_text);
 		}
+
+		// user
+		while (eregi("\[(iln$ws((inst$ws=$ws([\"0-9])*)?".$ws."user$ws=$ws(\"([^\"])*)\")$ws)/\]", $a_text, $found))
+		{
+			$attribs = ilUtil::attribsToArray($found[2]);
+			$inst_str = $attribs["inst"];
+			include_once("./Services/User/classes/class.ilObjUser.php");
+			$user_id = ilObjUser::_lookupId($attribs[user]);
+			$a_text = eregi_replace("\[".$found[1]."/\]",
+				"<IntLink Target=\"il_".$inst_str."_user_".$user_id."\" Type=\"User\"/>", $a_text);
+		}
+
 		$a_text = eregi_replace("\[\/iln\]","</IntLink>",$a_text);
 		return $a_text;
 	}
-	
-	
+
+
 	/**
 	* Converts xml from DB to output in edit textarea.
 	*
@@ -838,7 +850,7 @@ echo htmlentities($a_text);*/
 			{
 				$text.= "<br />";
 			}
-			
+
 			// start next line
 			if ($level > $old_level)
 			{
@@ -860,19 +872,19 @@ echo htmlentities($a_text);*/
 				$text.= "<SimpleListItem>";
 			}
 			$text.= substr($row, $level);
-			
+
 			$old_level = $level;
 		}
-		
+
 		// remove "<br />" at the end
 		if (substr($text, strlen($text) - 6) == "<br />")
 		{
 			$text = substr($text, 0, strlen($text) - 6);
 		}
-		
+
 		return $text;
 	}
-	
+
 	/**
 	* Replaces <list> tags with *
 	*
@@ -961,7 +973,7 @@ echo htmlentities($a_text);*/
 				$li = false;
 			}
 		}
-		
+
 		// remove trailing <br />, if text ends with list
 		if ($segments[count($segments) - 1] == "</SimpleBulletList>" ||
 			$segments[count($segments) - 1] == "</SimpleNumberedList>" &&
@@ -972,14 +984,14 @@ echo htmlentities($a_text);*/
 
 		return $text;
 	}
-	
+
 	/**
 	* Segments a string into an array at each position of a substring
 	*/
 	static function segmentString($a_haystack, $a_needles)
 	{
 		$segments = array();
-		
+
 		$nothing_found = false;
 		while (!$nothing_found)
 		{
@@ -1010,7 +1022,7 @@ echo htmlentities($a_text);*/
 		{
 			$segments[] = $a_haystack;
 		}
-		
+
 		return $segments;
 	}
 
@@ -1060,7 +1072,7 @@ echo htmlentities($a_text);*/
 			$a_text = ilPCParagraph::xml2outputReplaceLists($a_text);
 //echo "<br>".htmlentities($a_text);
 		}
-		
+
 		// internal links
 		while (eregi("<IntLink($any)>", $a_text, $found))
 		{
@@ -1135,7 +1147,13 @@ echo htmlentities($a_text);*/
 				case "File":
 					$a_text = eregi_replace("<IntLink".$found[1].">","[iln ".$inst_str."dfile=\"".$target_id."\"".$tframestr."]",$a_text);
 					break;
-					
+
+				// User
+				case "User":
+					include_once("./Services/User/classes/class.ilObjUser.php");
+					$a_text = eregi_replace("<IntLink".$found[1].">","[iln ".$inst_str."user=\"".ilObjUser::_lookupLogin($target_id)."\"/]",$a_text);
+					break;
+
 				default:
 					$a_text = eregi_replace("<IntLink".$found[1].">","[iln]",$a_text);
 					break;
@@ -1219,7 +1237,7 @@ if (!$a_wysiwyg)
 		$a_text = str_replace ("</SimpleBulletList>=", "</SimpleBulletList><br />=", $a_text);
 		$a_text = str_replace ("</SimpleNumberedList>=", "</SimpleNumberedList><br />=", $a_text);
 		$a_text = "<br />".$a_text."<br />";		// add preceding and trailing br
-		
+
 		$chunks = array();
 		$c_text = $a_text;
 //echo "0";
@@ -1327,7 +1345,7 @@ if (!$a_wysiwyg)
 		{
 			$chunks[] = array("level" => 0, "text" => "");
 		}
-		
+
 
 		// remove preceding br
 		if (substr($chunks[0]["text"], 0, 6) == "<br />")
@@ -1348,7 +1366,7 @@ if (!$a_wysiwyg)
 		}
 		return $chunks;
 	}
-	
+
 	/**
 	* Remove preceding <br />
 	*/
@@ -1383,7 +1401,7 @@ if (!$a_wysiwyg)
 		}
 		return $a_str;
 	}
-	
+
 	/**
 	* Need to override getType from ilPageContent to distinguish between Pararagraph and Source
 	*/
@@ -1395,7 +1413,7 @@ if (!$a_wysiwyg)
 	////
 	//// Ajax related procedures
 	////
-	
+
 	/**
 	 * Save input coming from ajax
 	 *
@@ -1415,7 +1433,7 @@ if (!$a_wysiwyg)
 		$pc_id = explode(":", $a_pc_id);
 		$insert_at = explode(":", $a_insert_at);
 		$t_id = explode(":", $t["id"]);
-		
+
 		// insert new paragraph
 		if ($a_insert_at != "")
 		{
@@ -1426,7 +1444,7 @@ if (!$a_wysiwyg)
 		{
 			$par = $a_pg_obj->getContentObject($pc_id[0], $pc_id[1]);
 		}
-		
+
 		if ($a_insert_at != "")
 		{
 			$pc_id = $a_pg_obj->generatePCId();
@@ -1483,8 +1501,8 @@ if (!$a_wysiwyg)
 
 		return $this->inserted_pc_id;
 	}
-	
-	
+
+
 	/**
 	 * Handle ajax content
 	 */
@@ -1508,7 +1526,7 @@ if (!$a_wysiwyg)
 
 		// convert tags
 		$xpath = new DOMXpath($doc);
-		
+
 		$elements = $xpath->query("//span");
 		include_once("./Services/Utilities/classes/class.ilDOM2Util.php");
 		while (!is_null($elements) && !is_null($element = $elements->item(0)))
@@ -1528,14 +1546,14 @@ if (!$a_wysiwyg)
 			{
 				ilDOM2Util::replaceByChilds($element);
 			}
-			
+
 			$elements = $xpath->query("//span");
 		}
 
 		// convert tags
 		$xpath = new DOMXpath($doc);
 		$elements = $xpath->query("/dummy/div");
-		
+
 		$ret = array();
 		if (!is_null($elements))
 		{
@@ -1551,15 +1569,15 @@ if (!$a_wysiwyg)
 
 				$text = $doc->saveXML($element);
 				$text = str_replace("<br/>", "\n", $text);
-		
+
 				// remove wrapping div
 				$pos = strpos($text, ">");
 				$text = substr($text, $pos + 1);
 				$pos = strrpos($text, "<");
 				$text = substr($text, 0, $pos);
-		
+
 		// todo: remove empty spans <span ...> </span>
-		
+
 				// replace tags by bbcode
 				foreach (ilPageContentGUI::_getCommonBBButtons() as $bb => $cl)
 				{
@@ -1574,11 +1592,11 @@ if (!$a_wysiwyg)
 				}
 				$text = str_replace(array("<code>", "</code>"),
 					array("[code]", "[/code]"), $text);
-				
+
 				$text = str_replace("<code/>", "", $text);
 				$text = str_replace('<ul class="ilc_list_u_BulletedList"/>', "", $text);
 				$text = str_replace('<ul class="ilc_list_o_NumberedList"/>', "", $text);
-				
+
 				$ret[] = array("text" => $text, "id" => $id, "class" => $class);
 			}
 		}
@@ -1613,7 +1631,7 @@ if (!$a_wysiwyg)
 
 		$text = str_replace(array("&lt;li class=\"ilc_list_item_StandardListItem\"/&gt;"),
 			array("<SimpleListItem></SimpleListItem>"), $text);
-		
+
 		$text = str_replace("<SimpleBulletList><br />", "<SimpleBulletList>", $text);
 		$text = str_replace("<SimpleNumberedList><br />", "<SimpleNumberedList>", $text);
 		$text = str_replace("<br /><SimpleBulletList>", "<SimpleBulletList>", $text);
@@ -1624,7 +1642,7 @@ if (!$a_wysiwyg)
 
 		return $text;
 	}
-	
+
 	/**
 	 * Update page object
 	 * (it would be better to have this centralized and to change the constructors
@@ -1635,11 +1653,11 @@ if (!$a_wysiwyg)
 	function updatePage($a_page)
 	{
 		$a_page->beforePageContentUpdate($this);
-		
+
 		$ret = $a_page->update();
 		return $ret;
 	}
-	
+
 	/**
 	 * Auto link glossaries
 	 *
@@ -1651,7 +1669,7 @@ if (!$a_wysiwyg)
 		if (is_array($a_glos) && count($a_glos) > 0)
 		{
 			include_once("./Modules/Glossary/classes/class.ilGlossaryTerm.php");
-			
+
 			// check which terms occur in the text (we may
 			// get some false positives due to the strip_tags, but
 			// we do not want to find strong or list or other stuff
@@ -1672,7 +1690,7 @@ if (!$a_wysiwyg)
 					}
 				}
 			}
-			
+
 			// did we find anything? -> modify content
 			if (count($found_terms) > 0)
 			{
@@ -1680,7 +1698,7 @@ if (!$a_wysiwyg)
 			}
 		}
 	}
-	
+
 	/**
 	 * Link terms in a dom page object in bb style
 	 *
@@ -1697,7 +1715,7 @@ if (!$a_wysiwyg)
 		}
 		$a_terms = ilUtil::sortArray($a_terms, "termlength", "asc", true);
 
-		
+
 		if ($a_dom instanceof php4DOMDocument)
 		{
 			$a_dom = $a_dom->myDOMDocument;
@@ -1706,9 +1724,9 @@ if (!$a_wysiwyg)
 		{
 			$a_par_node = $a_par_node->myDOMNode;
 		}
-		
+
 		$xpath = new DOMXPath($a_dom);
-		
+
 		if ($a_par_node == null)
 		{
 			$parnodes = $xpath->query('//Paragraph');
@@ -1727,19 +1745,19 @@ if (!$a_wysiwyg)
 			foreach ($textnodes as $node)
 			{
 				$p = $node->getNodePath();
-				
+
 				// we do not change text nodes inside of links
 				if (!is_int(strpos($p, "/IntLink")) &&
 					!is_int(strpos($p, "/ExtLink")))
 				{
 					$node_val = $node->nodeValue;
-					
+
 					// all terms
 					foreach ($a_terms as $t)
 					{
 						$pos = ilStr::strIPos($node_val, $t["term"]);
-						
-						// if term found 
+
+						// if term found
 						while (is_int($pos))
 						{
 							// check if the string is not included in another word
@@ -1754,12 +1772,12 @@ if (!$a_wysiwyg)
 								$mid = '[iln term="'.$t["id"].'"]'.
 									ilStr::subStr($node_val, $pos, ilStr::strLen($t["term"])).
 									"[/iln]";
-	
+
 								$node_val = ilStr::subStr($node_val, 0, $pos).
 									$mid.
 									ilStr::subStr($node_val, $pos + ilStr::strLen($t["term"]))
 									;
-									
+
 								$pos+= ilStr::strLen($mid);
 							}
 							else
@@ -1768,26 +1786,26 @@ if (!$a_wysiwyg)
 							}
 							$pos = ilStr::strIPos($node_val, $t["term"], $pos);
 						}
-						
+
 						// insert [iln] tags
 					}
-					
+
 					$node->nodeValue = $node_val;
 				}
-				
+
 	//			var_dump($p);
 	//			var_dump($node->nodeValue);
 			}
-			
-			
+
+
 			// dump paragraph node
 			$text = $a_dom->saveXML($parnode);
 			$text = substr($text, 0, strlen($text) - strlen("</Paragraph>"));
 			$text = substr($text, strpos($text, ">") + 1);
-				
+
 			// replace [iln] by tags with xml representation
 			$text = self::intLinks2xml($text);
-				
+
 			// "set text"
 			$temp_dom = domxml_open_mem('<?xml version="1.0" encoding="UTF-8"?><Paragraph>'.$text.'</Paragraph>',
 				DOMXML_LOAD_PARSING, $error);
@@ -1805,11 +1823,11 @@ if (!$a_wysiwyg)
 				// copy new content children in paragraph node
 				$xpath_temp = new DOMXPath($temp_dom);
 				$temp_pars = $xpath_temp->query("//Paragraph");
-				
-				foreach ($temp_pars as $new_par_node) 
+
+				foreach ($temp_pars as $new_par_node)
 				{
 					$new_childs = $new_par_node->childNodes;
-					
+
 					foreach($new_childs as $new_child)
 					{
 						//$cloned_child = $new_child->cloneNode(true);
@@ -1821,7 +1839,7 @@ if (!$a_wysiwyg)
 		}
 	}
 
-	
+
 	/**
 	 * Auto link glossary of whole page
 	 *
@@ -1832,12 +1850,12 @@ if (!$a_wysiwyg)
 	{
 		$a_page->buildDom();
 		$a_dom = $a_page->getDom();
-		
+
 		self::linkTermsInDom($a_dom, $a_terms);
-				
+
 		$a_page->update();
 	}
-	
+
 	/**
 	 * After page has been updated (or created)
 	 *
@@ -1852,7 +1870,7 @@ if (!$a_wysiwyg)
 		self::saveMetaKeywords($a_page, $a_domdoc);
 		self::saveAnchors($a_page, $a_domdoc);
 	}
-	
+
 	/**
 	 * Before page is being deleted
 	 *
@@ -1887,7 +1905,7 @@ if (!$a_wysiwyg)
 
 		// get all anchors
 		$xpath = new DOMXPath($a_domdoc);
-		$nodes = $xpath->query('//Anchor');	
+		$nodes = $xpath->query('//Anchor');
 		$saved = array();
 		foreach ($nodes as $node)
 		{
@@ -1907,21 +1925,21 @@ if (!$a_wysiwyg)
 	static function _deleteAnchors($a_parent_type, $a_page_id, $a_page_lang)
 	{
 		global $ilDB;
-		
+
 		$ilDB->manipulate("DELETE FROM page_anchor WHERE ".
 			" page_parent_type = ".$ilDB->quote($a_parent_type, "text").
 			" AND page_id = ".$ilDB->quote($a_page_id, "integer").
 			" AND page_lang = ".$ilDB->quote($a_page_lang, "text")
 			);
 	}
-	
+
 	/**
 	 * Save an anchor
 	 */
 	static function _saveAnchor($a_parent_type, $a_page_id, $a_page_lang, $a_anchor_name)
 	{
 		global $ilDB;
-		
+
 		$ilDB->manipulate("INSERT INTO page_anchor ".
 			"(page_parent_type, page_id, page_lang, anchor_name) VALUES (".
 			$ilDB->quote($a_parent_type, "text").",".
@@ -1937,11 +1955,11 @@ if (!$a_wysiwyg)
 	static function _readAnchors($a_parent_type, $a_page_id, $a_page_lang = "-")
 	{
 		global $ilDB;
-		
+
 		$and_lang = ($a_page_lang != "")
 			? " AND page_lang = ".$ilDB->quote($a_page_lang, "text")
 			: "";
-		
+
 		$set = $ilDB->query("SELECT * FROM page_anchor ".
 			" WHERE page_parent_type = ".$ilDB->quote($a_parent_type, "text").
 			" AND page_id = ".$ilDB->quote($a_page_id, "integer").
@@ -1969,7 +1987,7 @@ if (!$a_wysiwyg)
 		{
 			// get existing keywords
 			$keywords = array();
-			
+
 			// find all Keyw tags
 			$xpath = new DOMXPath($a_domdoc);
 			$nodes = $xpath->query('//Keyw');
@@ -1981,13 +1999,13 @@ if (!$a_wysiwyg)
 					$keywords[] = $k;
 				}
 			}
-			
+
 			$meta_type = ($a_page->getParentType() == "gdf")
 				? "gdf"
 				: "pg";
 			$meta_rep_id = $a_page->getParentId();
 			$meta_id = $a_page->getId();
-			
+
 			include_once("./Services/MetaData/classes/class.ilMD.php");
 			$md_obj = new ilMD($meta_rep_id, $meta_id, $meta_type);
 			$mkeywords = array();

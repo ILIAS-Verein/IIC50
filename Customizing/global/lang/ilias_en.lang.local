@@ -8,3 +8,9 @@ style#:#sty_type_ca_icont#:#Carousel Item Content
 style#:#sty_type_ca_ihead#:#Carousel Item Header
 wiki#:#wiki_link_md_values#:#Automatic Linking
 wiki#:#wiki_link_md_values_info#:#Autmatically links properties presented in the side block to wiki pages with the same name.
+content#:#cont_pc_carousel#:#Carousel
+style#:#sty_carousel_templates#:#Carousel Templates
+style#:#sty_ca_cntr_class#:#Carousel Container
+style#:#sty_ca_icntr_class#:#Carousel Item Container
+style#:#sty_ca_icont_class#:#Carousel Item Content
+style#:#sty_ca_ihead_class#:#Carousel Item Header

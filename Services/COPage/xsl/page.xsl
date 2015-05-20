@@ -3435,6 +3435,9 @@
 		<xsl:when test="@Type = 'Carousel'">
 			<xsl:attribute name="class">ilc_ca_cntr_CarouselCntr owl-carousel</xsl:attribute>
 			<xsl:attribute name="id">ilc_accordion_<xsl:value-of select = "$pg_id"/>_<xsl:number count="Tabs" level="any" /></xsl:attribute>
+			<xsl:if test="@Template and //StyleTemplates/StyleTemplate[@Name=$ttemp]/StyleClass[@Type='ca_cntr']/@Value">
+				<xsl:attribute name = "class">ilc_ca_cntr_<xsl:value-of select = "//StyleTemplates/StyleTemplate[@Name=$ttemp]/StyleClass[@Type='ca_cntr']/@Value"/> owl-carousel</xsl:attribute>
+			</xsl:if>
 		</xsl:when>
 		</xsl:choose>
 			<xsl:apply-templates select="Tab">
@@ -3563,6 +3566,9 @@
 		</xsl:when>
 		<xsl:when test="../@Type = 'Carousel'">
 			<xsl:attribute name="class">ilc_ca_icntr_CarouselICntr</xsl:attribute>
+			<xsl:if test="../@Template and //StyleTemplates/StyleTemplate[@Name=$ttemp]/StyleClass[@Type='ca_icntr']/@Value">
+				<xsl:attribute name = "class">ilc_ca_icntr_<xsl:value-of select = "//StyleTemplates/StyleTemplate[@Name=$ttemp]/StyleClass[@Type='ca_icntr']/@Value"/></xsl:attribute>
+			</xsl:if>
 		</xsl:when>
 	</xsl:choose>
 	
@@ -3596,6 +3602,9 @@
 		</xsl:when>
 		<xsl:when test="../@Type = 'Carousel'">
 			<xsl:attribute name="class">ilc_ca_ihead_CarouselIHead</xsl:attribute>
+			<xsl:if test="../@Template and //StyleTemplates/StyleTemplate[@Name=$ttemp]/StyleClass[@Type='ca_ihead']/@Value">
+				<xsl:attribute name = "class">ilc_ca_ihead_<xsl:value-of select = "//StyleTemplates/StyleTemplate[@Name=$ttemp]/StyleClass[@Type='ca_ihead']/@Value"/></xsl:attribute>
+			</xsl:if>
 		</xsl:when>
 		</xsl:choose>
 		<xsl:attribute name="style"><xsl:if test="$cheight != 'null' and $mode != 'edit' and ../@Type = 'HorizontalAccordion'">height: <xsl:value-of select="$cheight" />px;</xsl:if></xsl:attribute>
@@ -3654,6 +3663,7 @@
 			</xsl:when>
 			</xsl:choose>
 			<xsl:value-of select="./TabCaption" />
+			<xsl:comment>Break</xsl:comment>
 		</div>
 		<xsl:comment>Break</xsl:comment>
 		</div>
@@ -3691,6 +3701,9 @@
 			</xsl:when>
 			<xsl:when test="../@Type = 'Carousel'">
 				<xsl:attribute name="class">ilc_ca_icont_CarouselICont</xsl:attribute>
+				<xsl:if test="../@Template and //StyleTemplates/StyleTemplate[@Name=$ttemp]/StyleClass[@Type='ca_icont']/@Value">
+					<xsl:attribute name = "class">ilc_ca_icont_<xsl:value-of select = "//StyleTemplates/StyleTemplate[@Name=$ttemp]/StyleClass[@Type='ca_icont']/@Value"/></xsl:attribute>
+				</xsl:if>
 			</xsl:when>
 			</xsl:choose>
 			<xsl:attribute name="style"><xsl:value-of select="$cstyle" /></xsl:attribute>

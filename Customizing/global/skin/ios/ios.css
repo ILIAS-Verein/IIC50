@@ -8450,6 +8450,7 @@ span.ilCalColSpan {
   width: 24px;
   height: 25px;
   float: left;
+  text-align: center;
 }
 ul.ilCalSel li img {
   margin-top: 6px;
@@ -11144,6 +11145,19 @@ table.mceToolbar td {
   a[href]:after {
     content: "";
   }
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibold-webfont.eot');
+  src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibold-webfont.woff') format('woff'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibold-webfont.ttf') format('truetype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibold-webfont.svg') format('svg');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibolditalic-webfont.eot');
+  src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibolditalic-webfont.woff') format('woff'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibolditalic-webfont.ttf') format('truetype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibolditalic-webfont.svg') format('svg');
+  font-weight: bold;
+  font-style: italic;
 }
 .ilContainerWidth {
   max-width: 1200px;

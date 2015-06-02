@@ -11612,6 +11612,9 @@ table.ilc_table_StandardTable div.ilc_section_Block {
 div.ilBlogList {
   padding: 10px 0;
 }
+.ilContainerBlockHeader {
+  padding: 2px 0;
+}
 .ilMainHeader {
   background: url("images/header_bg.jpg") no-repeat center -40px;
   border-bottom: none;

@@ -10601,6 +10601,17 @@ a.ilSubmitInactive:active {
   border-color: #b0b0b0;
   cursor: default;
 }
+.bnt-split.dropdown-toggle {
+  border-left: 1px solid white;
+}
+.bnt-split.dropdown-toggle:hover,
+.bnt-split.dropdown-toggle:focus,
+.bnt-split.dropdown-toggle:active {
+  border-left: 1px solid white;
+}
+.split-btn-default {
+  float: left;
+}
 /* Services/Rating */
 img.ilRatingIcon {
   width: 16px;

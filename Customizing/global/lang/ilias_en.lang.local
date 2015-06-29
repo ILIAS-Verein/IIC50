@@ -21,5 +21,5 @@ style#:#sty_type_sup#:#Superscript
 content#:#cont_text_sub#:#Subscript
 content#:#cont_text_sup#:#Superscript
 common#:#toggle_dropdown#:#Toggle Dropdown
-forum#:#reply_to_postings#:#Reply to this posting
-forum#:#add_new_answer#:#Add New Answer
+forum#:#reply_to_postings#:#Reply
+forum#:#add_new_answer#:#Add Posting

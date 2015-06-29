@@ -6553,6 +6553,11 @@ sub {
 sup {
   vertical-align: super;
 }
+/* see bug #15971 */
+sub,
+sup {
+  position: static;
+}
 strong,
 b {
   font-weight: bold;
@@ -7994,6 +7999,9 @@ div.ilFrmPostHeader span.small {
   border: 1px solid #FD7;
   background-color: #FF9;
   padding: 0 5px;
+}
+.ilFrmBottomToolbar {
+  margin-top: 20px;
 }
 /* Services/Mail */
 a.mailread,
@@ -10583,6 +10591,17 @@ a.ilSubmitInactive:active {
   background-color: #b0b0b0;
   border-color: #b0b0b0;
   cursor: default;
+}
+.bnt-split.dropdown-toggle {
+  border-left: 1px solid white;
+}
+.bnt-split.dropdown-toggle:hover,
+.bnt-split.dropdown-toggle:focus,
+.bnt-split.dropdown-toggle:active {
+  border-left: 1px solid white;
+}
+.split-btn-default {
+  float: left;
 }
 /* Services/Rating */
 img.ilRatingIcon {

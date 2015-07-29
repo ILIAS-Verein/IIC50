@@ -1060,6 +1060,7 @@ assessment#:#tst_reset_processing_time_desc#:#The duration will be reset to the 
 assessment#:#tst_reset_processing_time#:#Reset duration for every test pass
 assessment#:#tst_result_user_name_pass#:#Results of Test Pass %s for %s
 assessment#:#tst_result_user_name#:#Test Results for %s
+assessment#:#tst_result_pass#:#Results of Test Pass
 assessment#:#tst_results_access_always#:#Immediately
 assessment#:#tst_results_access_always_desc#:#Participants can access their results on the ‘Info’-tab immediately after starting the test pass and while still taking the test. Additionally ILIAS will present them with their test results immediately after finishing  the test.
 assessment#:#tst_results_access_date#:#Date
@@ -11019,7 +11020,7 @@ notes#:#notes_private_annotating#:#Private Annotation
 tagging#:#tagging_set_tag#:#Set Tags
 content#:#cont_link_to_internal#:#Link to ILIAS Resource
 content#:#cont_link_to_external#:#Link to External Website
-content#:#cont_link_to_wiki#:#Link to Wiki Page
+content#:#cont_link_to_wiki#:#Link to Wiki Page (Insert Brackets)
 content#:#cont_standard#:#Standard
 content#:#cont_char_style_com#:#Comment
 content#:#cont_char_style_quot#:#Quotation
@@ -15241,3 +15242,12 @@ meta#:#md_adv_confirm_definition_select_option_all_action#:#New Value
 file#:#file_import#:#Import File
 cron#:#cron_result_status_fail#:#Failed
 wiki#:#wiki_unhide_meta_adv_records#:#Show additional properties
+content#:#cont_wiki_link_dialog#:#Link to Wiki Page (Dialog)
+link#:#link_link#:#Link
+prtt#:#prtt_portfolio_created#:#Portfolio Template added
+forum#:#frm_censorship#:#Censor
+forum#:#frm_revoke_censorship#:#Revoke Censorship
+forum#:#frm_censorship_applied#:#The censorship has been successfully applied.
+forum#:#frm_censorship_revoked#:#The censorship has been successfully revoked.
+forum#:#frm_mark_as_read#:#Mark as read
+forum#:#frm_mark_as_unread#:#Mark as unread

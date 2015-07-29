@@ -2298,10 +2298,12 @@ class ilObjForumGUI extends ilObjectGUI implements ilDesktopItemHandling
 				if(($_POST['confirm'] != '' || $_POST['no_cs_change'] != '') && $_GET['action'] == 'ready_censor')
 				{
 					$frm->postCensorship($this->handleFormInput($_POST['formData']['cens_message']), $this->objCurrentPost->getId(), 1);
+					ilUtil::sendSuccess($this->lng->txt('frm_censorship_applied'));
 				}
 				else if(($_POST['cancel'] != '' || $_POST['yes_cs_change'] != '') && $_GET['action'] == 'ready_censor')
 				{
 					$frm->postCensorship($this->handleFormInput($_POST['formData']['cens_message']), $this->objCurrentPost->getId());
+					ilUtil::sendSuccess($this->lng->txt('frm_censorship_revoked'));
 				}
 			}
 

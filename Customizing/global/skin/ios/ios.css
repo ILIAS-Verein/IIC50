@@ -6,7 +6,7 @@
 @font-face {
   font-family: 'Open Sans';
   src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-bold-webfont.eot');
-  src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-bold-webfont?#iefix') format('embedded-opentype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-bold-webfont.woff') format('woff'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-bold-webfont.ttf') format('truetype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-bold-webfont.svg') format('svg');
+  src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-bold-webfont.woff') format('woff'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-bold-webfont.ttf') format('truetype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-bold-webfont.svg') format('svg');
   font-weight: bold;
 }
 @font-face {
@@ -18,7 +18,7 @@
 @font-face {
   font-family: 'Open Sans';
   src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-bolditalic-webfont.eot');
-  src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-bolditalic-webfont?#iefix') format('embedded-opentype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-bolditalic-webfont.woff') format('woff'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-bolditalic-webfont.ttf') format('truetype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-bolditalic-webfont.svg') format('svg');
+  src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-bolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-bolditalic-webfont.woff') format('woff'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-bolditalic-webfont.ttf') format('truetype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-bolditalic-webfont.svg') format('svg');
   font-weight: bold;
   font-style: italic;
 }
@@ -6553,11 +6553,6 @@ sub {
 sup {
   vertical-align: super;
 }
-/* see bug #15971 */
-sub,
-sup {
-  position: static;
-}
 strong,
 b {
   font-weight: bold;
@@ -7465,17 +7460,6 @@ img.ilIcon {
   width: 32px;
   height: 32px;
 }
-/* PreventBreakOut, see https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
-.ilPreventBreakOut {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: break-all;
-  word-break: break-word;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-}
 /* Component Imports */
 /* Services/Accordion */
 .il_VAccordionHead,
@@ -7565,6 +7549,10 @@ select.form-control {
 .form-horizontal label {
   color: #4d4d4d;
   font-size: 100%;
+}
+.form-horizontal .control-label + div > span {
+  display: inline-block;
+  padding-top: 4px;
 }
 .form-horizontal .control-label.col-sm-3.il_textarea {
   text-align: left;
@@ -7915,6 +7903,10 @@ a.ilTreeView:focus {
   width: 20px;
   height: 20px;
 }
+img.il_ExplorerIcon {
+  height: 20px;
+  width: 20px;
+}
 /* Modules/Forum */
 a.postread,
 a.postread:visited {
@@ -8016,9 +8008,6 @@ div.ilFrmPostHeader span.small {
   background-color: #FF9;
   padding: 0 5px;
 }
-.ilFrmBottomToolbar {
-  margin-top: 20px;
-}
 /* Services/Mail */
 a.mailread,
 a.mailread:visited {
@@ -8030,6 +8019,10 @@ a.mailunread:visited {
 }
 .iosMailFilter .checkbox {
   display: inline-block !important;
+  margin: 0 10px !important;
+}
+.iosMailFilter .checkbox:first-child {
+  margin: 0 15px !important;
 }
 .iosMailFilter .checkbox input[type="checkbox"] {
   margin-left: -15px !important;
@@ -9550,7 +9543,7 @@ span.bibl_text_inline_Emph {
   width: 306px;
   color: #F0F0F0;
   margin-top: -240px;
-  background: url("images//black60.png");
+  background: url("images/black60.png");
 }
 .ilPlayerPreviewOverlay img {
   cursor: pointer;
@@ -10608,16 +10601,8 @@ a.ilSubmitInactive:active {
   border-color: #b0b0b0;
   cursor: default;
 }
-.bnt-split.dropdown-toggle {
-  border-left: 1px solid white;
-}
-.bnt-split.dropdown-toggle:hover,
-.bnt-split.dropdown-toggle:focus,
-.bnt-split.dropdown-toggle:active {
-  border-left: 1px solid white;
-}
-.split-btn-default {
-  float: left;
+button > .glyphicon {
+  pointer-events: none;
 }
 /* Services/Rating */
 img.ilRatingIcon {
@@ -10808,6 +10793,14 @@ div.ilChecklist ul li img {
 .ilFileUploadEntryOptions label.control-label {
   padding-top: 3px;
 }
+/* Services/UIComponent/Modal */
+.modal-body .jstree li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.modal-body .jstree a {
+  display: inline;
+}
 .noMargin {
   margin: 0;
 }
@@ -10903,6 +10896,22 @@ table.mceToolbar td {
 }
 .alert > a {
   text-decoration: underline;
+}
+.alert > a.btn {
+  text-decoration: none;
+}
+#ilAdvSelListAnchorText_asl + ul.dropdown-menu > li > div.row,
+#mm_adm_tr + span + ul.dropdown-menu > li > div.row,
+#mm_adm_tr + ul.dropdown-menu > li > div.row {
+  width: 750px;
+}
+@media only screen and (max-width: 767px) {
+  #ilAdvSelListAnchorText_asl + ul.dropdown-menu > li > div.row,
+  #mm_adm_tr + span + ul.dropdown-menu > li > div.row,
+  #mm_adm_tr + ul.dropdown-menu > li > div.row {
+    width: 100% !important;
+    margin: 0;
+  }
 }
 /* basic responsiveness (beta)
 
@@ -11181,18 +11190,8 @@ table.mceToolbar td {
     content: "";
   }
 }
-@font-face {
-  font-family: 'Open Sans';
-  src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibold-webfont.eot');
-  src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibold-webfont.woff') format('woff'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibold-webfont.ttf') format('truetype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibold-webfont.svg') format('svg');
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'Open Sans';
-  src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibolditalic-webfont.eot');
-  src: url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibolditalic-webfont.woff') format('woff'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibolditalic-webfont.ttf') format('truetype'), url('../../../../templates/default/fonts/OpenSansWeb/opensans-semibolditalic-webfont.svg') format('svg');
-  font-weight: bold;
-  font-style: italic;
+.checkbox input[type="checkbox"]#item_filter_enabled {
+  margin-left: 0;
 }
 .ilContainerWidth {
   max-width: 1200px;

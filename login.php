@@ -2,7 +2,7 @@
 /* Copyright (c) 1998-2009 ILIAS open source, Extended GPL, see docs/LICENSE */
 
 /**
-* login script for ilias
+*  login script for ilias
 *
 * @author Sascha Hofmann <saschahofmann@gmx.de>
 * @author Peter Gabriel <pgabriel@databay.de>
